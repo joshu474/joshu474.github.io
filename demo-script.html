@@ -1,97 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OAuth Verification Demo Script</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    button {
-      display: block;
-      width: 100%;
-      text-align: left;
-      padding: 12px;
-      margin: 10px 0;
-      font-size: 1rem;
-      background-color: #e0e0e0;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #d0d0d0;
-    }
-    .section {
-      display: none;
-      margin: 10px 0 20px 0;
-      padding: 10px;
-      background-color: #fff;
-      border-left: 4px solid #4CAF50;
-    }
-    .back-to-top {
-      display: block;
-      margin-top: 20px;
-      text-align: right;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <h1>OAuth Verification Demo Script</h1>
+<!-- Cloud Console Setup -->
+<p><strong>⏱️ 0:15 – Cloud Console Setup</strong><br>
+I’ll show how I configured my Google Cloud Console, added scopes manually, and verified redirect URIs.<br>
+<a href="https://console.cloud.google.com/apis/credentials?project=calm-producer-468709-g9" target="_blank" style="color:#007BFF; font-weight:bold;">
+🔗 Open Google Cloud Console Credentials
+</a>
+</p>
 
-  <button onclick="toggleSection('intro')">⏱️ 0:00 – Introduction</button>
-  <div id="intro" class="section">
-    <p>Hello and welcome to this OAuth verification walkthrough for Make.com using Google Sheets and Drive.</p>
-    <p>[Pause 2 seconds]</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
+<!-- Consent Screen and Policies -->
+<p><strong>⏱️ 0:35 – Consent Screen and Policies</strong><br>
+Let’s begin by reviewing the OAuth consent screen setup, including the privacy policy and terms of service hosted on GitHub Pages.<br>
+<a href="https://joshu474.github.io/privacy-policy.html" target="_blank" style="color:#28a745; font-weight:bold;">
+📄 View Privacy Policy
+</a><br>
+<a href="https://joshu474.github.io/terms-of-service.html" target="_blank" style="color:#17a2b8; font-weight:bold;">
+📄 View Terms of Service
+</a>
+</p>
 
-  <button onclick="toggleSection('cloud')">⏱️ 0:15 – Google Cloud Console</button>
-  <div id="cloud" class="section">
-    <p>In this demo, I’ll show how I configured my Google Cloud Console, added scopes manually, and verified redirect URIs.</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
-
-  <button onclick="toggleSection('consent')">⏱️ 0:35 – Consent Screen and Policies</button>
-  <div id="consent" class="section">
-    <p>Here I walk through setting up the OAuth consent screen, linking to my privacy policy and terms of service hosted on GitHub Pages.</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
-
-  <button onclick="toggleSection('make')">⏱️ 1:00 – Make Scenario</button>
-  <div id="make" class="section">
-    <p>This section shows how I built the Make scenario, connected Google Sheets and Drive, and tested the OAuth flow.</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
-
-  <button onclick="toggleSection('verification')">⏱️ 1:20 – Verification File</button>
-  <div id="verification" class="section">
-    <p>I demonstrate how I uploaded the verification file to GitHub Pages and confirmed ownership in Google Search Console.</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
-
-  <button onclick="toggleSection('closing')">⏱️ 1:40 – Closing</button>
-  <div id="closing" class="section">
-    <p>Thank you for watching — feel free to reach out if you have questions!</p>
-    <p>[Pause and smile]</p>
-    <a href="#top" class="back-to-top">⬆️ Back to top</a>
-  </div>
-
-  <script>
-    function toggleSection(id) {
-      const section = document.getElementById(id);
-      section.style.display = section.style.display === 'none' ? 'block' : 'none';
-    }
-  </script>
-</body>
-</html>
+<!-- Verification File -->
+<p><strong>⏱️ 1:20 – Verification File</strong><br>
+I’ll show the verification file and explain how it confirms site ownership in Google Search Console.<br>
+<a href="https://search.google.com/search-console/verification" target="_blank" style="color:#dc3545; font-weight:bold;">
+🔍 Open Search Console Verification Page
+</a>
+</p>
