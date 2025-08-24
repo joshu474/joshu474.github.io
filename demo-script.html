@@ -1,79 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OAuth Verification Demo Script</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      background-color: #f9f9f9;
     }
-    .cue {
-      color: #007BFF;
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1rem;
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
-      text-decoration: underline;
+    }
+    button:hover {
+      background-color: #d0d0d0;
     }
     .section {
       display: none;
-      margin-top: 20px;
+      margin: 10px 0 20px 0;
       padding: 10px;
-      border-left: 3px solid #007BFF;
-      background-color: #f9f9f9;
+      background-color: #fff;
+      border-left: 4px solid #4CAF50;
     }
-    .back {
-      margin-top: 10px;
+    .back-to-top {
       display: block;
-      font-size: 0.9em;
+      margin-top: 20px;
+      text-align: right;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h2>OAuth Verification Demo Script</h2>
+  <h1>OAuth Verification Demo Script</h1>
 
-  <p>⏱️ 0:00 – Introduction  
-  Hello and welcome to this OAuth verification walkthrough for Make.com using Google Sheets and Drive.  
-  [Pause 2 seconds]</p>
+  <button onclick="toggleSection('intro')">⏱️ 0:00 – Introduction</button>
+  <div id="intro" class="section">
+    <p>Hello and welcome to this OAuth verification walkthrough for Make.com using Google Sheets and Drive.</p>
+    <p>[Pause 2 seconds]</p>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
+  </div>
 
-  <p>⏱️ 0:15 – <span class="cue" onclick="showSection('cloud-console')">Google Cloud Console</span></p>
-  <p>⏱️ 0:35 – <span class="cue" onclick="showSection('consent-screen')">Consent Screen and Policies</span></p>
-  <p>⏱️ 1:00 – <span class="cue" onclick="showSection('make-scenario')">Make Scenario</span></p>
-  <p>⏱️ 1:20 – <span class="cue" onclick="showSection('verification-file')">Verification File</span></p>
-  <p>⏱️ 1:40 – Closing  
-  Thank you for watching — feel free to reach out if you have questions!  
-  [Pause and smile]</p>
-
-  <!-- Hidden Sections -->
-  <div id="cloud-console" class="section">
-    <h3>Google Cloud Console Setup</h3>
+  <button onclick="toggleSection('cloud')">⏱️ 0:15 – Google Cloud Console</button>
+  <div id="cloud" class="section">
     <p>In this demo, I’ll show how I configured my Google Cloud Console, added scopes manually, and verified redirect URIs.</p>
-    <a href="#top" class="back">⬆️ Back to top</a>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
   </div>
 
-  <div id="consent-screen" class="section">
-    <h3>Consent Screen and Policies</h3>
-    <p>Let’s begin by reviewing the OAuth consent screen setup, including the privacy policy and terms of service hosted on GitHub Pages.</p>
-    <a href="#top" class="back">⬆️ Back to top</a>
+  <button onclick="toggleSection('consent')">⏱️ 0:35 – Consent Screen and Policies</button>
+  <div id="consent" class="section">
+    <p>Here I walk through setting up the OAuth consent screen, linking to my privacy policy and terms of service hosted on GitHub Pages.</p>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
   </div>
 
-  <div id="make-scenario" class="section">
-    <h3>Make Scenario</h3>
-    <p>This section shows how the Make scenario connects to Google Sheets and triggers automation based on new entries.</p>
-    <a href="#top" class="back">⬆️ Back to top</a>
+  <button onclick="toggleSection('make')">⏱️ 1:00 – Make Scenario</button>
+  <div id="make" class="section">
+    <p>This section shows how I built the Make scenario, connected Google Sheets and Drive, and tested the OAuth flow.</p>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
   </div>
 
-  <div id="verification-file" class="section">
-    <h3>Verification File</h3>
-    <p>Finally, I’ll show the verification file and explain how it confirms site ownership in Google Search Console.</p>
-    <a href="#top" class="back">⬆️ Back to top</a>
+  <button onclick="toggleSection('verification')">⏱️ 1:20 – Verification File</button>
+  <div id="verification" class="section">
+    <p>I demonstrate how I uploaded the verification file to GitHub Pages and confirmed ownership in Google Search Console.</p>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
+  </div>
+
+  <button onclick="toggleSection('closing')">⏱️ 1:40 – Closing</button>
+  <div id="closing" class="section">
+    <p>Thank you for watching — feel free to reach out if you have questions!</p>
+    <p>[Pause and smile]</p>
+    <a href="#top" class="back-to-top">⬆️ Back to top</a>
   </div>
 
   <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(sec => sec.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === 'none' ? 'block' : 'none';
     }
   </script>
 </body>
