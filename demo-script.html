@@ -2,61 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>OAuth Demo Script</title>
+  <title>OAuth Verification Demo Script</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.8;
+      line-height: 1.6;
       padding: 20px;
-      max-width: 600px;
-      margin: auto;
-      font-size: 1.2em;
     }
-    h1 {
-      text-align: center;
-      font-size: 1.6em;
+    .cue {
+      color: #007BFF;
+      cursor: pointer;
+      text-decoration: underline;
     }
-    .highlight {
-      font-weight: bold;
-      color: #2a5db0;
+    .section {
+      display: none;
+      margin-top: 20px;
+      padding: 10px;
+      border-left: 3px solid #007BFF;
+      background-color: #f9f9f9;
     }
-    .pause {
-      color: #888;
-      font-style: italic;
-    }
-    .timer {
-      background-color: #f0f0f0;
-      padding: 5px;
-      border-left: 4px solid #2a5db0;
-      margin-bottom: 10px;
+    .back {
+      margin-top: 10px;
+      display: block;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <h1>OAuth Verification Demo Script</h1>
+  <h2>OAuth Verification Demo Script</h2>
 
-  <div class="timer">⏱️ 0:00 – Introduction</div>
-  <p><span class="highlight">Hello and welcome</span> to this OAuth verification walkthrough for Make.com using Google Sheets and Drive.</p>
-  <p class="pause">[Pause 2 seconds]</p>
+  <p>⏱️ 0:00 – Introduction  
+  Hello and welcome to this OAuth verification walkthrough for Make.com using Google Sheets and Drive.  
+  [Pause 2 seconds]</p>
 
-  <div class="timer">⏱️ 0:15 – Cloud Console Setup</div>
-  <p>In this demo, I’ll show how I <span class="highlight">configured my Google Cloud Console</span>, <span class="highlight">added scopes manually</span>, and <span class="highlight">verified redirect URIs</span>.</p>
-  <p class="pause">[Pause 3 seconds]</p>
+  <p>⏱️ 0:15 – <span class="cue" onclick="showSection('cloud-console')">Google Cloud Console</span></p>
+  <p>⏱️ 0:35 – <span class="cue" onclick="showSection('consent-screen')">Consent Screen and Policies</span></p>
+  <p>⏱️ 1:00 – <span class="cue" onclick="showSection('make-scenario')">Make Scenario</span></p>
+  <p>⏱️ 1:20 – <span class="cue" onclick="showSection('verification-file')">Verification File</span></p>
+  <p>⏱️ 1:40 – Closing  
+  Thank you for watching — feel free to reach out if you have questions!  
+  [Pause and smile]</p>
 
-  <div class="timer">⏱️ 0:35 – Consent Screen and Policies</div>
-  <p>Let’s begin by reviewing the <span class="highlight">OAuth consent screen setup</span>, including the <span class="highlight">privacy policy</span> and <span class="highlight">terms of service</span> hosted on GitHub Pages.</p>
-  <p class="pause">[Pause and scroll slowly through policy]</p>
+  <!-- Hidden Sections -->
+  <div id="cloud-console" class="section">
+    <h3>Google Cloud Console Setup</h3>
+    <p>In this demo, I’ll show how I configured my Google Cloud Console, added scopes manually, and verified redirect URIs.</p>
+    <a href="#top" class="back">⬆️ Back to top</a>
+  </div>
 
-  <div class="timer">⏱️ 1:00 – Make Scenario</div>
-  <p>Next, I’ll demonstrate how the <span class="highlight">Make scenario connects to Google Sheets</span> and triggers automation based on new entries.</p>
-  <p class="pause">[Pause 2 seconds — show Make module]</p>
+  <div id="consent-screen" class="section">
+    <h3>Consent Screen and Policies</h3>
+    <p>Let’s begin by reviewing the OAuth consent screen setup, including the privacy policy and terms of service hosted on GitHub Pages.</p>
+    <a href="#top" class="back">⬆️ Back to top</a>
+  </div>
 
-  <div class="timer">⏱️ 1:20 – Verification File</div>
-  <p>Finally, I’ll show the <span class="highlight">verification file</span> and explain how it confirms <span class="highlight">site ownership in Google Search Console</span>.</p>
-  <p class="pause">[Pause 3 seconds — show verification tab]</p>
+  <div id="make-scenario" class="section">
+    <h3>Make Scenario</h3>
+    <p>This section shows how the Make scenario connects to Google Sheets and triggers automation based on new entries.</p>
+    <a href="#top" class="back">⬆️ Back to top</a>
+  </div>
 
-  <div class="timer">⏱️ 1:40 – Closing</div>
-  <p><span class="highlight">Thank you for watching</span> — feel free to reach out if you have questions!</p>
-  <p class="pause">[Pause and smile]</p>
+  <div id="verification-file" class="section">
+    <h3>Verification File</h3>
+    <p>Finally, I’ll show the verification file and explain how it confirms site ownership in Google Search Console.</p>
+    <a href="#top" class="back">⬆️ Back to top</a>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
